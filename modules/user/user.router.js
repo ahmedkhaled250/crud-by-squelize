@@ -1,0 +1,11 @@
+import { Router } from "express";
+import * as userController from "./controller/user.js";
+const router = Router();
+router.put("/updateProfile/:id", userController.updateProfile);
+router.patch("/updatePassword/:id", userController.updatePassword);
+router.delete("/deleteProfile/:id", userController.deleteProfile);
+router.get("/", userController.allUsers);
+router.get("/searshByName/:name", userController.searshByName);
+router.get("/searshByAge/:age", userController.searshByAge);
+router.get("/:id", userController.getUserById);
+export default router;
